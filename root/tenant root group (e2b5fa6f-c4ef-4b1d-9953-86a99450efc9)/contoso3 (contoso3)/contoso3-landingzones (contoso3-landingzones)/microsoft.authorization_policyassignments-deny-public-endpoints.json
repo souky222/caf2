@@ -1,0 +1,30 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "metadata": {
+    "_generator": {
+      "name": "AzOps"
+    }
+  },
+  "parameters": {},
+  "variables": {},
+  "resources": [
+    {
+      "type": "Microsoft.Authorization/policyAssignments",
+      "name": "Deny-Public-Endpoints",
+      "apiVersion": "2022-06-01",
+      "location": "westeurope",
+      "properties": {
+        "Description": "Deny-Public-Endpoints",
+        "DisplayName": "Deny-Public-Endpoints",
+        "EnforcementMode": "Default",
+        "NonComplianceMessages": null,
+        "NotScopes": null,
+        "Parameters": {},
+        "PolicyDefinitionId": "/providers/Microsoft.Management/managementGroups/contoso3/providers/Microsoft.Authorization/policySetDefinitions/Deny-PublicEndpoints",
+        "Scope": "/providers/Microsoft.Management/managementGroups/contoso3-landingzones"
+      }
+    }
+  ],
+  "outputs": {}
+}

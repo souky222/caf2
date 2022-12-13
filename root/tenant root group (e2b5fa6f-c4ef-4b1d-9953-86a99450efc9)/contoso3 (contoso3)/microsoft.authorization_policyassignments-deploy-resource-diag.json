@@ -1,0 +1,39 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "metadata": {
+    "_generator": {
+      "name": "AzOps"
+    }
+  },
+  "parameters": {},
+  "variables": {},
+  "resources": [
+    {
+      "type": "Microsoft.Authorization/policyAssignments",
+      "name": "Deploy-Resource-Diag",
+      "apiVersion": "2022-06-01",
+      "location": "westeurope",
+      "identity": {
+        "PrincipalId": "82b865a5-ae4b-411f-9654-7ee2c589b39b",
+        "TenantId": "e2b5fa6f-c4ef-4b1d-9953-86a99450efc9",
+        "Type": "SystemAssigned"
+      },
+      "properties": {
+        "Description": "Deploy-Resource-Diag",
+        "DisplayName": "Deploy-Resource-Diag",
+        "EnforcementMode": "Default",
+        "NonComplianceMessages": null,
+        "NotScopes": null,
+        "Parameters": {
+          "logAnalytics": {
+            "value": "/subscriptions/acede5fb-487e-4ebc-993c-670dbb40db90/resourcegroups/contoso3-mgmt/providers/microsoft.operationalinsights/workspaces/contoso3-la-acede5fb-487e-4ebc-993c-670dbb40db90"
+          }
+        },
+        "PolicyDefinitionId": "/providers/Microsoft.Management/managementGroups/contoso3/providers/Microsoft.Authorization/policySetDefinitions/Deploy-Diag-LogAnalytics",
+        "Scope": "/providers/Microsoft.Management/managementGroups/contoso3"
+      }
+    }
+  ],
+  "outputs": {}
+}

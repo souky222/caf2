@@ -1,0 +1,42 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "metadata": {
+    "_generator": {
+      "name": "AzOps"
+    }
+  },
+  "parameters": {},
+  "variables": {},
+  "resources": [
+    {
+      "type": "Microsoft.Authorization/policyAssignments",
+      "name": "Deploy-AzActivity-Log",
+      "apiVersion": "2022-06-01",
+      "location": "westeurope",
+      "identity": {
+        "PrincipalId": "265b4e5c-d3d1-40b6-86e3-0ef8801c00ac",
+        "TenantId": "e2b5fa6f-c4ef-4b1d-9953-86a99450efc9",
+        "Type": "SystemAssigned"
+      },
+      "properties": {
+        "Description": "Deploy-AzActivity-Log",
+        "DisplayName": "Deploy-AzActivity-Log",
+        "EnforcementMode": "Default",
+        "NonComplianceMessages": null,
+        "NotScopes": null,
+        "Parameters": {
+          "logAnalytics": {
+            "value": "/subscriptions/acede5fb-487e-4ebc-993c-670dbb40db90/resourcegroups/contoso3-mgmt/providers/microsoft.operationalinsights/workspaces/contoso3-la-acede5fb-487e-4ebc-993c-670dbb40db90"
+          },
+          "logsEnabled": {
+            "value": "True"
+          }
+        },
+        "PolicyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/2465583e-4e78-4c15-b6be-a36cbc7c8b0f",
+        "Scope": "/providers/Microsoft.Management/managementGroups/contoso3"
+      }
+    }
+  ],
+  "outputs": {}
+}

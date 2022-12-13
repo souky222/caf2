@@ -1,0 +1,39 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "metadata": {
+    "_generator": {
+      "name": "AzOps"
+    }
+  },
+  "parameters": {},
+  "variables": {},
+  "resources": [
+    {
+      "type": "Microsoft.Authorization/policyAssignments",
+      "name": "Deploy-VM-Monitoring",
+      "apiVersion": "2022-06-01",
+      "location": "westeurope",
+      "identity": {
+        "PrincipalId": "c48c4ff6-b71c-4638-9d05-748420f4966e",
+        "TenantId": "e2b5fa6f-c4ef-4b1d-9953-86a99450efc9",
+        "Type": "SystemAssigned"
+      },
+      "properties": {
+        "Description": "Deploy-VM-Monitoring",
+        "DisplayName": "Deploy-VM-Monitoring",
+        "EnforcementMode": "Default",
+        "NonComplianceMessages": null,
+        "NotScopes": null,
+        "Parameters": {
+          "logAnalytics_1": {
+            "value": "/subscriptions/acede5fb-487e-4ebc-993c-670dbb40db90/resourcegroups/contoso3-mgmt/providers/microsoft.operationalinsights/workspaces/contoso3-la-acede5fb-487e-4ebc-993c-670dbb40db90"
+          }
+        },
+        "PolicyDefinitionId": "/providers/Microsoft.Authorization/policySetDefinitions/55f3eceb-5573-4f18-9695-226972c6d74a",
+        "Scope": "/providers/Microsoft.Management/managementGroups/contoso3-landingzones"
+      }
+    }
+  ],
+  "outputs": {}
+}
