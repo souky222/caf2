@@ -54,6 +54,7 @@
                 "parameters": {
                     "listOfAllowedLocations": {
                         "value": "[parameters('listOfAllowedLocations')]"
+                    
                     }
                 }
             }
