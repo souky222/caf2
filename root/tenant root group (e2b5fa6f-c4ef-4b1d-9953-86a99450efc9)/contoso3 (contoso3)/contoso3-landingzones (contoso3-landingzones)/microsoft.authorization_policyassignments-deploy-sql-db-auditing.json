@@ -1,0 +1,35 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "metadata": {
+    "_generator": {
+      "name": "AzOps"
+    }
+  },
+  "parameters": {},
+  "variables": {},
+  "resources": [
+    {
+      "type": "Microsoft.Authorization/policyAssignments",
+      "name": "Deploy-SQL-DB-Auditing",
+      "apiVersion": "2022-06-01",
+      "location": "westeurope",
+      "identity": {
+        "PrincipalId": "3a10ca27-3e72-46bb-9b53-347e2427f365",
+        "TenantId": "e2b5fa6f-c4ef-4b1d-9953-86a99450efc9",
+        "Type": "SystemAssigned"
+      },
+      "properties": {
+        "Description": "Deploy-SQL-Audit",
+        "DisplayName": "Deploy-SQL-Audit",
+        "EnforcementMode": "Default",
+        "NonComplianceMessages": null,
+        "NotScopes": null,
+        "Parameters": null,
+        "PolicyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/a6fb4358-5bf4-4ad7-ba82-2cd2f41ce5e9",
+        "Scope": "/providers/Microsoft.Management/managementGroups/contoso3-landingzones"
+      }
+    }
+  ],
+  "outputs": {}
+}

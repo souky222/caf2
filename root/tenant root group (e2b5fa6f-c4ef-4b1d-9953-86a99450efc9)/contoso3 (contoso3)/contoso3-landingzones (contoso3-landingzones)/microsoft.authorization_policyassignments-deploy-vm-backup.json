@@ -1,0 +1,35 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "metadata": {
+    "_generator": {
+      "name": "AzOps"
+    }
+  },
+  "parameters": {},
+  "variables": {},
+  "resources": [
+    {
+      "type": "Microsoft.Authorization/policyAssignments",
+      "name": "Deploy-VM-Backup",
+      "apiVersion": "2022-06-01",
+      "location": "westeurope",
+      "identity": {
+        "PrincipalId": "7aeac6ac-2535-4b5f-b62d-5efc0cc920eb",
+        "TenantId": "e2b5fa6f-c4ef-4b1d-9953-86a99450efc9",
+        "Type": "SystemAssigned"
+      },
+      "properties": {
+        "Description": "Deploy-VM-Backup",
+        "DisplayName": "Deploy-VM-Backup",
+        "EnforcementMode": "Default",
+        "NonComplianceMessages": null,
+        "NotScopes": null,
+        "Parameters": {},
+        "PolicyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/98d0b9f8-fd90-49c9-88e2-d3baf3b0dd86",
+        "Scope": "/providers/Microsoft.Management/managementGroups/contoso3-landingzones"
+      }
+    }
+  ],
+  "outputs": {}
+}

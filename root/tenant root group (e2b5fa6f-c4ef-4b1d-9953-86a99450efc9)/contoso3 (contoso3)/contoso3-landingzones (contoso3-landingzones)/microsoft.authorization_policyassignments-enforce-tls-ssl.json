@@ -1,0 +1,35 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "metadata": {
+    "_generator": {
+      "name": "AzOps"
+    }
+  },
+  "parameters": {},
+  "variables": {},
+  "resources": [
+    {
+      "type": "Microsoft.Authorization/policyAssignments",
+      "name": "Enforce-TLS-SSL",
+      "apiVersion": "2022-06-01",
+      "location": "westeurope",
+      "identity": {
+        "PrincipalId": "ba9c5a7c-e363-411a-8315-7d0edb655444",
+        "TenantId": "e2b5fa6f-c4ef-4b1d-9953-86a99450efc9",
+        "Type": "SystemAssigned"
+      },
+      "properties": {
+        "Description": "Enforce-TLS-SSL",
+        "DisplayName": "Enforce-TLS-SSL",
+        "EnforcementMode": "Default",
+        "NonComplianceMessages": null,
+        "NotScopes": null,
+        "Parameters": {},
+        "PolicyDefinitionId": "/providers/Microsoft.Management/managementGroups/contoso3/providers/Microsoft.Authorization/policySetDefinitions/Enforce-EncryptTransit",
+        "Scope": "/providers/Microsoft.Management/managementGroups/contoso3-landingzones"
+      }
+    }
+  ],
+  "outputs": {}
+}
